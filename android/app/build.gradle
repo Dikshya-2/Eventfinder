@@ -117,3 +117,13 @@ dependencies {
         implementation jscFlavor
     }
 }
+configurations.all {
+    resolutionStrategy {
+        // Force AndroidX libraries and exclude old support libraries
+        force 'androidx.core:core:1.15.0'
+        force 'androidx.appcompat:appcompat:1.6.1'
+        exclude group: 'com.android.support'
+    }
+}
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
