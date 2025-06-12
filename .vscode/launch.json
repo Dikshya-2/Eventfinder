@@ -11,13 +11,14 @@
             "url": "http://localhost:8080",
             "webRoot": "${workspaceFolder}"
         },
-    //     {
-    //   "name": "Debug Android",
-    //   "program": "${workspaceFolder}/.vscode/launchReactNative.js",
-    //   "request": "launch",
-    //   "type": "reactnative",
-    //   "platform": "android",
-    //   "sourceMaps": true
-    // }
+        {
+      "name": "Debug Android",
+      "program": "${workspaceFolder}/.vscode/launchReactNative.js",
+      "request": "launch",
+      "type": "reactnative",
+      "platform": "android",
+      "sourceMaps": true,
+      "cwd": "${workspaceFolder}"
+    }
     ]
-}
+}   

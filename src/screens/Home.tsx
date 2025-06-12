@@ -1,7 +1,7 @@
 // src/screens/Home.tsx
 
 import React, { useCallback, useEffect, useState } from 'react';
-import { View, FlatList, Button } from 'react-native';
+import { View, FlatList } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
 
 import EventCard from '../components/EventCard';
@@ -34,7 +34,9 @@ export default function Home({ navigation }: any) {
     }
     if (search) {
       filtered = filtered.filter(e =>
-        e.name.toLowerCase().includes(search.toLowerCase())
+        e.name.toLowerCase().includes(search.toLowerCase()) ||
+        e.location?.toLowerCase().includes(search.toLowerCase()) ||
+  e.date.toLowerCase().includes(search.toLowerCase())
       );
     }
     setFilteredEvents(filtered);
@@ -93,10 +95,10 @@ export default function Home({ navigation }: any) {
 
       <CategoryFilter selected={category} onSelect={setCategory} />
       <SearchBar value={search} onChange={setSearch} />
-      <Button
+      {/* <Button
         title="View Favorites"
         onPress={() => navigation.navigate('Favorites')}
-      />
+      /> */}
 
       <FlatList
         data={filteredEvents}

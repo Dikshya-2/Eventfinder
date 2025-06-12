@@ -6,9 +6,10 @@ import Home from './src/screens/Home';
 import EventDetail from './src/screens/EventDetail';
 import Favorites from './src/screens/Favorites';
 import PushNotification from 'react-native-push-notification';
-import Notification from './src/components/Notification';
+// import Notification from './src/components/Notification';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { RootStackParamList } from './src/Navigation/types';
+import Notifications from './src/screens/Notifications';
 
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -42,7 +43,7 @@ const MainTabs = () => (
   >
     <Tab.Screen name="Home" component={Home} />
     <Tab.Screen name="Favorites" component={Favorites} />
-    <Tab.Screen name="Notifications" component={Notification} />
+    <Tab.Screen name="Notifications" component={Notifications} />
     {/* <Tab.Screen name="Profile" component={Profile} /> */}
   </Tab.Navigator>
 );
